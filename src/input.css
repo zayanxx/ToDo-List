@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@media (max-width: 480px) {
+    .Navy{
+        text-align: center;
+    }
+    .main-div{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .response{
+        display: none;
+    }
+    .main{
+        height: 650px;
+        h1{
+            text-align: center;
+        }
+    }
+  }

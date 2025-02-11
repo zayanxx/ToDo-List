@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+  <title>TO-DO List</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <!-- link of font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-gradient-to-r from-slate-300 to-slate-300">
+    <nav class="bg-blue-950 p-5 Navy">
+      <h1 class="text-white text-2xl font-mono"><i class="fa-solid fa-coins text-white text-2xl mr-2"></i>Income Expense Calculator</h1>
+    </nav>
+    <div class="flex justify-center gap-4 main-div">
+      <div class="bg-white w-60 h-170 mt-5 rounded-lg shadow-lg response">
+        <h1 class="text-center font-bold font-mono text-2xl bg-blue-950 p-3 text-white"><i class="fa-solid fa-landmark mr-2"></i>Dashboard</h1>
+        <div class="block">
+          <div class="block bg-gray-300 text-center p-5">
+            <a href="#" class="font-bold font-mono text-lg hover:text-blue-900"><i class="fa-solid fa-house mr-2"></i>Home</a>
+          </div>
+          <div class="block bg-blue-300 text-center p-5">
+            <a href="#" class="font-bold font-mono text-lg hover:text-blue-900"><i class="fa-solid fa-address-card mr-2"></i>About</a>
+          </div>
+          <div class="block bg-red-300 text-center p-5">
+            <a href="#" class="font-bold font-mono text-lg hover:text-blue-900"><i class="fa-solid fa-id-badge mr-2"></i>Contact</a>
+          </div>
+          <div class="block bg-green-200 text-center p-5">
+            <a href="#" class="font-bold font-mono text-lg hover:text-blue-900"><i class="fa-solid fa-circle-question mr-2"></i>Qurey</a>
+          </div>
+        </div>
+        <div class="summary relative top-25 text-center">
+          <h1 class="font-bold font-mono text-2xl bg-blue-200 p-3">Entries</h1>
+          <p class="font-bold font-mono mt-4 text-md">Income: <span id="total-income">0</span></p>
+          <p class="font-bold font-mono mt-4 text-md">Expense: <span id="total-expense">0</span></p>
+          <p class="font-bold font-mono mt-5 text-md">Balance: <span id="net-balance">0</span></p>
+        </div>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-lg w-200 mt-5 main">
+        <h1 class="text-2xl font-bold text-center mb-6">Income Expense Calculator</h1>
+        
+      <!-- Summary Section -->
+      <div class="grid grid-cols-3 gap-4 mb-6 relative top-10">
+        <div class="bg-green-100 p-4 rounded-lg text-center">
+          <p class="text-sm text-gray-600 font-bold">Total Income</p>
+          <p class="text-lg font-bold" id="total-income">$0.00</p>
+        </div>
+        <div class="bg-red-100 p-4 rounded-lg text-center">
+          <p class="text-sm text-gray-600 font-bold">Total Expense</p>
+          <p class="text-lg font-bold" id="total-expense">$0.00</p>
+        </div>
+        <div class="bg-blue-100 p-4 rounded-lg text-center">
+          <p class="text-sm text-gray-600 font-bold">Net Balance</p>
+          <p class="text-lg font-bold" id="net-balance">$0.00</p>
+        </div>
+      </div>
+      <div class="flex justify-center gap-4 relative top-15">
+        <label class="inline-flex items-center mr-4">
+          <input type="radio" name="type" value="income" class="form-radio" checked>
+          <span class="ml-2">Income</span>
+        </label>
+        <label class="inline-flex items-center">
+          <input type="radio" name="type" value="expense" class="form-radio">
+          <span class="ml-2">Expense</span>
+        </label>
+        <label class="inline-flex items-center">
+          <input type="radio" name="type" value="expense" class="form-radio">
+          <span class="ml-2">others</span>
+        </label>
+      </div>
+      <form id="entry-form" class="mt-6 relative top-20">
+        <div class="grid grid-cols-2 gap-4">
+          <input type="text" id="description" placeholder="Enter The Description" class="p-3 border rounded-lg" required>
+          <input type="number" id="amount" placeholder="Enter The Amount" class="p-3 border rounded-lg" required>
+        </div>
+        <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-lg mt-8 cursor-pointer">Add Entry</button>
+        <button type="button" id="reset-btn" class="w-full bg-gray-500 text-white p-2 rounded-lg mt-2 cursor-pointer">Reset</button>
+      </form>
+      <div class="relative top-40 text-center flex justify-center flex-wrap gap-4">
+        <i class="fa-brands fa-whatsapp text-2xl cursor-pointer hover:text-green-500"></i>
+        <i class="fa-brands fa-facebook text-2xl cursor-pointer hover:text-blue-500"></i>
+        <i class="fa-brands fa-twitter text-2xl cursor-pointer hover:text-blue-500"></i>
+        <i class="fa-brands fa-instagram text-2xl cursor-pointer hover:text-pink-500"></i>
+        <i class="fa-brands fa-youtube text-2xl cursor-pointer hover:text-red-500"></i>
+      </div>
+      </div>
+      <div class="flex justify-center respon-one">
+        <div class="bg-white w-75 h-170 mt-5 rounded-lg shadow-lg">
+          <h1 class="text-center font-bold font-mono text-2xl bg-blue-950 p-3 text-white"><i class="fa-solid fa-street-view mr-2"></i>Overview</h1>
+          <!-- Filters -->
+          <div class="flex justify-center bg-gray-500 p-3 border border-gray-300">
+            <label class="items-center mr-4">
+              <input type="radio" name="filter" value="all" class="form-radio" checked>
+              <span class="ml-2 font-bold">All</span>
+            </label>
+            <label class="items-center mr-4">
+              <input type="radio" name="filter" value="income" class="form-radio">
+              <span class="ml-2 font-bold">Income</span>
+            </label>
+            <label class="items-center">
+              <input type="radio" name="filter" value="expense" class="form-radio">
+              <span class="ml-2 font-bold">Expense</span>
+            </label>
+          </div>
+          <!-- Entries List -->
+          <div id="entries-list" class="text-start font-boldfont-mono"></div>
+        </div>
+      </div>
+      </div>
+      <script src="script.js"></script>
+</body>
+</html>
